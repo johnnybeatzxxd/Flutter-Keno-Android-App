@@ -10,6 +10,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      darkTheme: ThemeData(
+        scaffoldBackgroundColor: Colors.black
+      ),
       home: Scaffold(
         body: Stack(
           children: [
@@ -22,7 +25,7 @@ class MyApp extends StatelessWidget {
                 AppBar(
                   backgroundColor: Colors.transparent,
                   elevation: 0,
-                  title: const Text('BALANCE', style: TextStyle(color: Colors.black,fontFamily: "PilatExtended",fontSize: 20)),
+                  title: const Text('BALANCE', style: TextStyle(fontFamily: "PilatExtended",fontSize: 20)),
                   centerTitle: true,
                   leading: IconButton(icon: const Icon(Icons.arrow_back_ios_sharp),onPressed: (){},),
                   actions: [IconButton(onPressed: (){}, icon: const Icon(Icons.settings))],
@@ -43,12 +46,12 @@ class MyApp extends StatelessWidget {
                       width: 151,
                       height: 40,
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(4),color: Colors.black,),
-                    child: const Center(child: Text("Input",style:TextStyle(fontWeight: FontWeight.bold,fontFamily: "PilatExtended"))),
+                    child: const Center(child: Text("Input",style:TextStyle(fontWeight: FontWeight.bold,fontFamily: "PilatExtended",color: Colors.white70))),
                     ),Container(
                       width: 151,
                       height: 40,
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(4),color: Colors.white70,),
-                    child: const Center(child:Text("Output",style:TextStyle(fontWeight: FontWeight.bold,fontFamily: "PilatExtended"))),
+                    child: const Center(child:Text("Output",style:TextStyle(fontWeight: FontWeight.bold,fontFamily: "PilatExtended",color: Colors.black))),
                     ),],
                 ))
               ],
