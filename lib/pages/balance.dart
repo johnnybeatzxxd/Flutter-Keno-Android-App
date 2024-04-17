@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "dart:math";
+import "package:flutter/widgets.dart";
 
 class BalancePage extends StatelessWidget {
   const BalancePage({super.key});
@@ -11,42 +12,45 @@ class BalancePage extends StatelessWidget {
           children: [
             CustomPaint(
               size: Size.infinite,
-              painter: LinePainter(),
+              painter: LinePainter(context),
             ),
             Column(
               children: [
-                AppBar(
+                AppBar(  
                   backgroundColor: Colors.transparent,
                   elevation: 0,
-                  title: const Text('BALANCE', style: TextStyle(fontFamily: "PilatExtended",fontSize: 20)),
+                  title: Text('BALANCE', style: TextStyle(color: Theme.of(context).colorScheme.onBackground, fontFamily: "PilatExtended",fontSize: 20)),
                   centerTitle: true,
-                  leading: IconButton(icon: const Icon(Icons.arrow_back_ios_sharp),onPressed: (){},),
-                  actions: [IconButton(onPressed: (){}, icon: const Icon(Icons.settings))],
+                  leading: IconButton(icon:  Icon(Icons.arrow_back_ios_sharp,color: Theme.of(context).colorScheme.onBackground,),onPressed: (){},),
+                  actions: [IconButton(onPressed: (){}, icon:  Icon(Icons.settings,color : Theme.of(context).colorScheme.onBackground))],
                 ),
                  Container(
                     padding: const EdgeInsets.fromLTRB(0,72,0,23),
-                    child: const Column(
+                    child: Column(
                       children: [
-                        Text('\$12,580', style: TextStyle(fontSize: 37, fontWeight: FontWeight.bold,fontFamily: "PilatExtended")),
+                        Text('\$12,580', style: TextStyle(color:Theme.of(context).colorScheme.onBackground,fontSize: 37, fontWeight: FontWeight.bold,fontFamily: "PilatExtended")),
                       ],
                     ),
                   ),
                  Padding(padding: const EdgeInsets.fromLTRB(32, 0, 32, 27),
                   child:Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [Container(
                       width: 151,
                       height: 40,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(4),color: Colors.black,),
-                    child: const Center(child: Text("Input",style:TextStyle(fontWeight: FontWeight.bold,fontFamily: "PilatExtended",color: Colors.white70))),
-                    ),Container(
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(4),color: Theme.of(context).colorScheme.onBackground,),
+                    child: Center(child: Text("Input",style:TextStyle(fontWeight: FontWeight.bold,fontFamily: "PilatExtended",color: Theme.of(context).colorScheme.background))),
+                    ),
+                    const SizedBox(width: 15,),
+                    Container(
                       width: 151,
                       height: 40,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(4),color: Colors.white70,),
-                    child: const Center(child:Text("Output",style:TextStyle(fontWeight: FontWeight.bold,fontFamily: "PilatExtended",color: Colors.black))),
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(4),color: Theme.of(context).colorScheme.background,),
+                    child: Center(child:Text("Output",style:TextStyle(fontWeight: FontWeight.bold,fontFamily: "PilatExtended",color: Theme.of(context).colorScheme.onBackground,))),
                     ),],
-                ))
+                )),
+                
               ],
             ),
           ],
@@ -57,11 +61,14 @@ class BalancePage extends StatelessWidget {
 
 class LinePainter extends CustomPainter {
   final Random random = Random();
+  final BuildContext context;
+
+  LinePainter(this.context);
 
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = const Color.fromARGB(31, 0, 0, 0)
+      ..color =  Theme.of(context).colorScheme.onBackground.withOpacity(0.07)
       ..strokeWidth = 0.5;
 
     for (var i = 0; i < size.width; i += 5 + random.nextInt(5)) {
