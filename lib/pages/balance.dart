@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:flutter/rendering.dart";
 import "dart:math";
 import "package:flutter/widgets.dart";
 
@@ -133,7 +134,9 @@ class BalancePage extends StatelessWidget {
                       ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 24,horizontal: 32),
-                  child: Column(children: [TextField(
+                  child: Column(
+                    crossAxisAlignment:CrossAxisAlignment.start ,
+                    children: [TextField(
                     style: TextStyle(fontFamily: "PilatExtended"),
                     cursorColor: Theme.of(context).colorScheme.onBackground,
                     decoration: InputDecoration(
@@ -166,7 +169,19 @@ class BalancePage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(6)),
                     ),
                   ),
+                  SizedBox(height: 15,),
                   
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Checkbox(value: true, onChanged: (bool? newValue) {},fillColor: MaterialStatePropertyAll(Theme.of(context).colorScheme.onBackground),),
+                      Flexible(
+                        child: Text('I agree to the terms of use of the "One click pay" services', softWrap: true,)
+                      )
+                    ],
+                  )
+                  ],)
                 )
 
               ],
