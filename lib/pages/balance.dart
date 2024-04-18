@@ -50,14 +50,48 @@ class BalancePage extends StatelessWidget {
                     child: Center(child:Text("Output",style:TextStyle(fontWeight: FontWeight.bold,fontFamily: "PilatExtended",color: Theme.of(context).colorScheme.onBackground,))),
                     ),],
                 )),
-                
+                const SizedBox(height: 24,),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(47, 0, 0, 27),
+                  child: SizedBox(
+                    height: 127,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        Container(
+                          width: 167,
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(6), color: const Color.fromRGBO(255, 75, 0, 1),),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  IconButton(
+                                    onPressed: (){},
+                                    icon: Icon(Icons.add_card,color: Theme.of(context).colorScheme.background,)),
+                                  SizedBox(width: 70,),
+                                  IconButton(
+                                    onPressed: (){}, 
+                                    icon: Icon(Icons.star_rounded,size:30 ,color: Theme.of(context).colorScheme.background.withOpacity(0.5),))
+                                    ],),
+                                    SizedBox(height: 30,),
+                                    Text("data")],),
+                        ),
+                        const SizedBox(width: 15,),
+                        Container(
+                          width: 167,
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(6), color: Theme.of(context).colorScheme.onBackground,),
+                          child: Center(child: Text("Balance", style: TextStyle(fontWeight: FontWeight.bold, fontFamily: "PilatExtended", color: Theme.of(context).colorScheme.background,))),
+                        ),
+                      ],)))
               ],
             ),
           ],
         ),
       );
   }
-}
+}///
 
 class LinePainter extends CustomPainter {
   final Random random = Random();
@@ -68,7 +102,7 @@ class LinePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color =  Theme.of(context).colorScheme.onBackground.withOpacity(0.07)
+      ..color =  Theme.of(context).colorScheme.onBackground.withOpacity(0.08)
       ..strokeWidth = 0.5;
 
     for (var i = 0; i < size.width; i += 5 + random.nextInt(5)) {
