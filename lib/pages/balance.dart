@@ -79,12 +79,12 @@ class BalancePage extends StatelessWidget {
                                     icon: Icon(Icons.star_rounded,size:30 ,color: Colors.white.withOpacity(0.5),))
                                     ],),
                                     const SizedBox(height: 20,),
-                                    Padding(padding: const EdgeInsets.symmetric(horizontal: 15),
+                                   const Padding(padding: EdgeInsets.symmetric(horizontal: 15),
                                       child:Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                            Text("Bank card",style:TextStyle(fontSize: 14,fontWeight: FontWeight.bold,fontFamily: "PilatExtended",color: Colors.white,)),
-                                           const Text("Commission 5%",style: TextStyle(fontSize: 12,color: Colors.white),)]))
+                                           Text("Commission 5%",style: TextStyle(fontSize: 12,color: Colors.white),)]))
                                     ],),
                         ),
                         const SizedBox(width: 15,),
@@ -99,7 +99,7 @@ class BalancePage extends StatelessWidget {
                                 color: Theme.of(context).colorScheme.onBackground.withOpacity(0.08),
                                 spreadRadius: 1,
                                 blurRadius: 6,
-                                offset: Offset(0, 3), // changes position of shadow
+                                offset: const Offset(0, 3), // changes position of shadow
                               ),
                             ],
                           ),
@@ -128,7 +128,47 @@ class BalancePage extends StatelessWidget {
                                            Text("Commission 0%",style: TextStyle(fontSize: 12,color: Theme.of(context).colorScheme.onBackground),)]))
                                     ],),
                         ),
-                      ],)))
+                      ],)
+                      )
+                      ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 24,horizontal: 32),
+                  child: Column(children: [TextField(
+                    style: TextStyle(fontFamily: "PilatExtended"),
+                    cursorColor: Theme.of(context).colorScheme.onBackground,
+                    decoration: InputDecoration(
+                      hintText: "Credit card",
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Theme.of(context).colorScheme.onBackground),
+                        borderRadius: BorderRadius.circular(6)),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Theme.of(context).colorScheme.onBackground),
+                        borderRadius: BorderRadius.circular(6)),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Theme.of(context).colorScheme.onBackground),
+                        borderRadius: BorderRadius.circular(6)),
+                    ),
+                  ),
+                  SizedBox(height: 16,),
+                  TextField(
+                    style: TextStyle(fontFamily: "PilatExtended"),
+                    cursorColor: Theme.of(context).colorScheme.onBackground,
+                    decoration: InputDecoration(
+                      hintText: "Amount",
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Theme.of(context).colorScheme.onBackground),
+                        borderRadius: BorderRadius.circular(6)),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Theme.of(context).colorScheme.onBackground),
+                        borderRadius: BorderRadius.circular(6)),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Theme.of(context).colorScheme.onBackground),
+                        borderRadius: BorderRadius.circular(6)),
+                    ),
+                  ),
+                  
+                )
+
               ],
             ),
           ],
