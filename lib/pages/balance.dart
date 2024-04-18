@@ -52,7 +52,7 @@ class BalancePage extends StatelessWidget {
                 )),
                 const SizedBox(height: 24,),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(47, 0, 0, 27),
+                  padding: const EdgeInsets.fromLTRB(32, 0, 0, 27),
                   child: SizedBox(
                     height: 127,
                     child: ListView(
@@ -62,6 +62,8 @@ class BalancePage extends StatelessWidget {
                           width: 167,
                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(6), color: const Color.fromRGBO(255, 75, 0, 1),),
                           child: Column(
+
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Row(
@@ -69,20 +71,49 @@ class BalancePage extends StatelessWidget {
                                 children: [
                                   IconButton(
                                     onPressed: (){},
-                                    icon: Icon(Icons.add_card,color: Theme.of(context).colorScheme.background,)),
-                                  SizedBox(width: 70,),
+                                    icon: Icon(Icons.add_card,color: Colors.white,)),
+                                  const SizedBox(width: 70,),
                                   IconButton(
                                     onPressed: (){}, 
-                                    icon: Icon(Icons.star_rounded,size:30 ,color: Theme.of(context).colorScheme.background.withOpacity(0.5),))
+                                    icon: Icon(Icons.star_rounded,size:30 ,color: Colors.white.withOpacity(0.5),))
                                     ],),
-                                    SizedBox(height: 30,),
-                                    Text("data")],),
+                                    const SizedBox(height: 20,),
+                                    Padding(padding: const EdgeInsets.symmetric(horizontal: 15),
+                                      child:Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                           Text("Bank card",style:TextStyle(fontSize: 14,fontWeight: FontWeight.bold,fontFamily: "PilatExtended",color: Colors.white,)),
+                                           const Text("Commission 5%",style: TextStyle(fontSize: 12,color: Colors.white),)]))
+                                    ],),
                         ),
                         const SizedBox(width: 15,),
                         Container(
                           width: 167,
-                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(6), color: Theme.of(context).colorScheme.onBackground,),
-                          child: Center(child: Text("Balance", style: TextStyle(fontWeight: FontWeight.bold, fontFamily: "PilatExtended", color: Theme.of(context).colorScheme.background,))),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(6), color: Color.fromARGB(255, 255, 255, 255),),
+                          child: Column(
+
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  IconButton(
+                                    onPressed: (){},
+                                    icon: Icon(Icons.apple,color: Colors.black,)),
+                                  const SizedBox(width: 70,),
+                                  IconButton(
+                                    onPressed: (){}, 
+                                    icon: Icon(Icons.star_rounded,size:30 ,color: Colors.black.withOpacity(0.5),))
+                                    ],),
+                                    const SizedBox(height: 20,),
+                                    Padding(padding: const EdgeInsets.symmetric(horizontal: 15),
+                                      child:Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                           Text("Apple Pay",style:TextStyle(fontSize: 14,fontWeight: FontWeight.bold,fontFamily: "PilatExtended",color: Theme.of(context).colorScheme.background,)),
+                                           Text("Commission 0%",style: TextStyle(fontSize: 12,color:  Theme.of(context).colorScheme.background),)]))
+                                    ],),
                         ),
                       ],)))
               ],
