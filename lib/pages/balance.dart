@@ -58,6 +58,7 @@ class BalancePage extends StatelessWidget {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
+                        // Selected Container
                         Container(
                           width: 167,
                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(6), color: const Color.fromRGBO(255, 75, 0, 1),),
@@ -87,9 +88,21 @@ class BalancePage extends StatelessWidget {
                                     ],),
                         ),
                         const SizedBox(width: 15,),
+                        // Unselected Container
                         Container(
                           width: 167,
-                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(6), color: Color.fromARGB(255, 255, 255, 255),),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(6), 
+                            color: Theme.of(context).colorScheme.background,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Theme.of(context).colorScheme.onBackground.withOpacity(0.08),
+                                spreadRadius: 1,
+                                blurRadius: 6,
+                                offset: Offset(0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
                           child: Column(
 
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -100,19 +113,19 @@ class BalancePage extends StatelessWidget {
                                 children: [
                                   IconButton(
                                     onPressed: (){},
-                                    icon: Icon(Icons.apple,color: Colors.black,)),
+                                    icon: Icon(Icons.apple,color: Theme.of(context).colorScheme.onBackground,)),
                                   const SizedBox(width: 70,),
                                   IconButton(
                                     onPressed: (){}, 
-                                    icon: Icon(Icons.star_rounded,size:30 ,color: Colors.black.withOpacity(0.5),))
+                                    icon: Icon(Icons.star_rounded,size:30 ,color: Theme.of(context).colorScheme.onBackground.withOpacity(0.5),))
                                     ],),
                                     const SizedBox(height: 20,),
                                     Padding(padding: const EdgeInsets.symmetric(horizontal: 15),
                                       child:Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
-                                           Text("Apple Pay",style:TextStyle(fontSize: 14,fontWeight: FontWeight.bold,fontFamily: "PilatExtended",color: Theme.of(context).colorScheme.background,)),
-                                           Text("Commission 0%",style: TextStyle(fontSize: 12,color:  Theme.of(context).colorScheme.background),)]))
+                                           Text("Apple ",style:TextStyle(fontSize: 14,fontWeight: FontWeight.bold,fontFamily: "PilatExtended",color:Theme.of(context).colorScheme.onBackground,)),
+                                           Text("Commission 0%",style: TextStyle(fontSize: 12,color: Theme.of(context).colorScheme.onBackground),)]))
                                     ],),
                         ),
                       ],)))
