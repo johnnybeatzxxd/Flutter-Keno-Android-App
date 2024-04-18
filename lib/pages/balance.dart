@@ -9,10 +9,10 @@ class BalancePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(
+        body: SingleChildScrollView(child:Stack(
           children: [
             CustomPaint(
-              size: Size.infinite,
+              size: Size.fromHeight(800),
               painter: LinePainter(context),
             ),
             Column(
@@ -26,7 +26,7 @@ class BalancePage extends StatelessWidget {
                   actions: [IconButton(onPressed: (){}, icon:  Icon(Icons.settings,color : Theme.of(context).colorScheme.onBackground))],
                 ),
                  Container(
-                    padding: const EdgeInsets.fromLTRB(0,40,0,45),
+                    padding: const EdgeInsets.fromLTRB(0,40,0,55),
                     child: Column(
                       children: [
                         Text('\$12,580', style: TextStyle(color:Theme.of(context).colorScheme.onBackground,fontSize: 37, fontWeight: FontWeight.bold,fontFamily: "PilatExtended")),
@@ -154,8 +154,10 @@ class BalancePage extends StatelessWidget {
                   ),
                   SizedBox(height: 16,),
                   TextField(
-                    style: TextStyle(fontFamily: "PilatExtended"),
+                    style: const TextStyle(fontFamily: "PilatExtended",),
                     cursorColor: Theme.of(context).colorScheme.onBackground,
+                    keyboardType: TextInputType.number, // Added to accept only numbers
+                    
                     decoration: InputDecoration(
                       hintText: "Amount",
                       border: OutlineInputBorder(
@@ -197,7 +199,7 @@ class BalancePage extends StatelessWidget {
               ],
             ),
           ],
-        ),
+        ),)
       );
   }
 }///
@@ -226,3 +228,4 @@ class LinePainter extends CustomPainter {
   @override
   bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
+
