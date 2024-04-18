@@ -26,7 +26,7 @@ class BalancePage extends StatelessWidget {
                   actions: [IconButton(onPressed: (){}, icon:  Icon(Icons.settings,color : Theme.of(context).colorScheme.onBackground))],
                 ),
                  Container(
-                    padding: const EdgeInsets.fromLTRB(0,72,0,23),
+                    padding: const EdgeInsets.fromLTRB(0,40,0,45),
                     child: Column(
                       children: [
                         Text('\$12,580', style: TextStyle(color:Theme.of(context).colorScheme.onBackground,fontSize: 37, fontWeight: FontWeight.bold,fontFamily: "PilatExtended")),
@@ -51,7 +51,7 @@ class BalancePage extends StatelessWidget {
                     child: Center(child:Text("Output",style:TextStyle(fontWeight: FontWeight.bold,fontFamily: "PilatExtended",color: Theme.of(context).colorScheme.onBackground,))),
                     ),],
                 )),
-                const SizedBox(height: 24,),
+                const SizedBox(height: 17,),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(32, 0, 0, 27),
                   child: SizedBox(
@@ -133,7 +133,7 @@ class BalancePage extends StatelessWidget {
                       )
                       ),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 24,horizontal: 32),
+                  padding: EdgeInsets.symmetric(vertical: 17,horizontal: 32),
                   child: Column(
                     crossAxisAlignment:CrossAxisAlignment.start ,
                     children: [TextField(
@@ -175,11 +175,21 @@ class BalancePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Checkbox(value: true, onChanged: (bool? newValue) {},fillColor: MaterialStatePropertyAll(Theme.of(context).colorScheme.onBackground),),
+                      Checkbox(value: true, onChanged: (bool? newValue) {},
+                        fillColor: MaterialStatePropertyAll(Theme.of(context).colorScheme.onBackground),
+                        checkColor: Theme.of(context).colorScheme.background,
+                        ),
                       Flexible(
                         child: Text('I agree to the terms of use of the "One click pay" services', softWrap: true,)
                       )
                     ],
+                  ),
+                  const SizedBox(height: 20,),
+                  Container(
+                    decoration: const BoxDecoration(color: Color.fromRGBO(255, 75, 0, 1), borderRadius: BorderRadius.all(Radius.circular(6))),
+                    width: 311,
+                    height: 48,
+                    child: GestureDetector(child: Center(child: Text("Deposit ",style:TextStyle(fontSize: 14,fontWeight: FontWeight.bold,fontFamily: "PilatExtended",color:Colors.white)),),),
                   )
                   ],)
                 )
