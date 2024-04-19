@@ -188,7 +188,7 @@ class BalancePage extends StatelessWidget {
                         fillColor: MaterialStatePropertyAll(Theme.of(context).colorScheme.onBackground),
                         checkColor: Theme.of(context).colorScheme.background,
                         ),
-                      Flexible(
+                      const Flexible(
                         child: Text('I agree to the terms of use of the "One click pay" services', softWrap: true,)
                       )
                     ],
@@ -204,8 +204,10 @@ class BalancePage extends StatelessWidget {
                               child: Text(
                                 "Deposit",
                                 style: TextStyle(
-                                  fontSize: MediaQuery.of(context).size.width * 0.035,
-                                  // ... other text styles
+                                  fontSize: MediaQuery.of(context).size.width * 0.035, // Responsive font size
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "PilatExtended",
+                                  color: Colors.white,
                                 ),
                               ),
                             ),
