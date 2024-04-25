@@ -15,7 +15,18 @@ class HomePage extends StatelessWidget {
               size: Size.fromHeight(MediaQuery.of(context).size.height),
               painter: LinePainter(context),
             ),
-            const Column()]),)
+             Column(
+              children: [
+                AppBar(  
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                  title: Text('BALANCE', style: TextStyle(color: Theme.of(context).colorScheme.onBackground, fontFamily: "PilatExtended",fontSize: 20)),
+                  centerTitle: true,
+                  leading: IconButton(icon:  Icon(Icons.arrow_back_ios_sharp,color: Theme.of(context).colorScheme.onBackground,),onPressed: (){},),
+                  actions: [IconButton(onPressed: (){}, icon:  Icon(Icons.settings,color : Theme.of(context).colorScheme.onBackground))],
+                ),
+              ],
+            )]),)
     ,);
   }
 }
