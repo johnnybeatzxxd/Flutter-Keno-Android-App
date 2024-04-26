@@ -76,7 +76,7 @@ class BalancePage extends StatelessWidget {
                                       children: [
                                         IconButton(
                                           onPressed: (){},
-                                          icon: Icon(Icons.add_card, color: Colors.white),
+                                          icon: const Icon(Icons.add_card, color: Colors.white),
                                         ),
                                         IconButton(
                                           onPressed: (){}, 
@@ -141,12 +141,12 @@ class BalancePage extends StatelessWidget {
                       )
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 17, horizontal: 32),
+                  padding: const EdgeInsets.symmetric(vertical: 17, horizontal: 32),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TextField(
-                    style: TextStyle(fontFamily: "PilatExtended"),
+                    style: const TextStyle(fontFamily: "PilatExtended"),
                     cursorColor: Theme.of(context).colorScheme.onBackground,
                     decoration: InputDecoration(
                       hintText: "Credit card",
@@ -161,7 +161,7 @@ class BalancePage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(6)),
                     ),
                   ),
-                  SizedBox(height: 16,),
+                  const SizedBox(height: 16,),
                   TextField(
                     style: const TextStyle(fontFamily: "PilatExtended",),
                     cursorColor: Theme.of(context).colorScheme.onBackground,
@@ -180,7 +180,7 @@ class BalancePage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(6)),
                     ),
                   ),
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
                        Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
