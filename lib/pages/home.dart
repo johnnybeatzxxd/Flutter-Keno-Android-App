@@ -52,8 +52,17 @@ class HomePage extends StatelessWidget {
                             }),
                           ),
                         ),
-                      
-                          
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 15,
+                        ),
+                        Text("Enter Your Draw", style: TextStyle(color: Theme.of(context).colorScheme.onBackground, fontFamily: "PilatExtended", fontSize: 20)) ,
+                        Row(
+                          children: [
+                            TextField(
+                              
+                            )
+                          ],
+                        )
                       
                     ],
                   ),
